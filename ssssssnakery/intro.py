@@ -7,15 +7,18 @@ HEIGHT = alien.height + 20
 def draw():
     screen.clear()
     alien.draw()
-    
-def update():
+'''    
+def on_key_down():
     alien.left += 2
     if alien.left > WIDTH:
         alien.right = 0
+'''
+def on_key_down(key, mod, unicode):
+    if key == RIGHT
+        rocket.right += 2
+        if rocket.left > WIDTH:
+            rocket.right
 
-def on_mouse_down(pos):
-    if alien.collidepoint(pos):
-        set_alien_hurt()
 
 
 def set_alien_hurt():
