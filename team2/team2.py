@@ -15,5 +15,13 @@ def draw():
     screen.clear()
     screen.blit(background,(0, 0))
 
-def update():
-    time.sleep(3)
+
+
+#def update():
+#    time.sleep(3)
+
+def on_key_down(key):
+    if key == keys.P:
+        music.play('four_seasons')
+    if key == keys.SPACE:
+        draw()
