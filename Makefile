@@ -5,7 +5,7 @@ env:
 	@pipenv install --dev
 
 run:
-	@echo "Nothing here yet"
+	@pipenv run pgzrun src/main.py
 
 test:
 	@echo "Tests"
