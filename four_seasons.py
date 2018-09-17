@@ -1,6 +1,6 @@
 WIDTH = 800
 HEIGHT = 800
-
+music.play('vivaldi')
 
 colours = {
     'sky': (38, 110, 226),
@@ -12,17 +12,17 @@ sprites = [
     Actor('autumn'),
     Actor('flower'),
     Actor('bud'),
-    Actor('snowflake'),
+    Actor('snowflake1'),
 ]
 
 
 def draw():
     screen.fill(colours['sky'])
-    soil_box = Rect((0, 550), (600, 600))
+    soil_box = Rect((0, 650), (800, 800))
     screen.draw.filled_rect(soil_box, colours['soil'])
 
-    screen.clear()
-    screen.fill((128, 128, 128))
+    # screen.clear()
+    # screen.fill((128, 128, 128))
 
     def branch_end(beg, way=1):
         beg[0] += (angle * way)
