@@ -30,8 +30,8 @@ def draw():
         return beg
 
     line_color = (0, 0, 0)
-    height = 50
-    angle = 20
+    height = 120
+    angle = 40
     beg_left = [400, 700]
     beg_right = [400, 700]
     left_pos, right_pos = beg_left[:], beg_right[:]
@@ -45,3 +45,12 @@ def draw():
 
         beg_right = right_pos[:]
         beg_left = left_pos[:]
+
+    sprites[0].pos = 240, 220
+    sprites[0].draw()
+    sprites[1].pos = 280, 340
+    sprites[1].draw()
+    sprites[2].pos = 320, 460
+    sprites[2].draw()
+    sprites[3].pos = 440, 580
+    sprites[3].draw()
