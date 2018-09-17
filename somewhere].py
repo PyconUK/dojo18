@@ -30,3 +30,4 @@ def update():
         t = time.time()
     for sprite in sprites:
         sprite.y += random.randint(1, 3)
+        sprite.x += random.randint(1, 5) - 3
