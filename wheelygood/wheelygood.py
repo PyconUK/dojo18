@@ -5,7 +5,7 @@ SPRING, SUMMER, AUTUMN, WINTER = 45, 135, 225, 315
 
 backdrop = Actor('wheel_in_time')
 backdrop.pos = 250, 400
-backdrop.angle = SUMMER -25
+backdrop.angle = SPRING
 WIDTH = 500
 HEIGHT = 250
 
@@ -15,6 +15,7 @@ snow = Actor('snow')
 snow.pos = 0, -200
 sun = Actor('sun')
 sun.pos = WIDTH - sun.width / 2 - 10, sun.height / 2 + 10
+
 
 def draw():
     screen.clear()
@@ -30,7 +31,7 @@ def draw():
 
 
 def update():
-    backdrop.angle += 0.155
+    backdrop.angle += 0.055
     if backdrop.angle > 360:
         backdrop.angle %= 360
     rain.top += 2
