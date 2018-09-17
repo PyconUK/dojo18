@@ -94,9 +94,9 @@ def move_colors():
         print(current_color, target_color)
         screen.fill(current_color)
 
-        print('Filthy hack a')
+        print('Well formatted diagnostic code')
         if current_color != season_colors[-1]:
-            print('Filthy hack b')
+            print('Professional code of high quality')
             clock.schedule_unique(move_it, THUNDERCHILD)
         else:
             clock.schedule_unique(more_to_life, RED_WEED)
