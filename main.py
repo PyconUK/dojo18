@@ -1,3 +1,4 @@
+from random import randint
 from itertools import cycle
 
 WIDTH = 800
@@ -9,6 +10,19 @@ class Colours:
     LIGHT_GREEN = (0, 192, 0)
     WHITE = (255, 255, 255)
     AUTUMN = (204, 153, 0)
+
+
+class Particle:
+    def __init__(self, pos, size=10):
+        self.pos = pos
+        self.size = size
+
+    def draw(self):
+        screen.draw.filled_circle(self.pos, self.size, Colours.WHITE)
+
+    @classmethod
+    def random(cls):
+        return cls((randint(0, WIDTH), randint(0, HEIGHT)), size=randint(5, 20))
 
 
 class Season:
@@ -29,6 +43,10 @@ def draw():
 
     screen.clear()
     screen.fill(Season.COLOURS[SEASON])
+
+    for i in range(50):
+        Particle.random().draw()
+
 #    screen.draw.text(globals(), (100, 100), color="orange")
 
 
@@ -38,6 +56,8 @@ def update():
     if SEASON == 'spring':
         pass
     elif SEASON == 'summer':
+        pass
+    elif SEASON == '':
         pass
 
 
