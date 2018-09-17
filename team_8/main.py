@@ -1,4 +1,5 @@
-from random import randint
+from colorsys import hls_to_rgb
+from random import randint, choice, random
 from itertools import cycle
 
 WIDTH = 800
@@ -12,6 +13,13 @@ class Colours:
     BLACK = (0, 0, 0)
     AUTUMN = (204, 153, 0)
     BROWN = (102, 78, 0)
+    BROWN_2 = (99, 95, 0)
+    BROWN_3 = (132, 100, 0)
+    BROWNS = [
+        BROWN,
+        BROWN_2,
+        BROWN_3,
+    ]
 
 
 class Particle:
@@ -37,7 +45,18 @@ class Particle:
         )
 
 
-LEAVES = [Particle.random(colour=Colours.BROWN) for i in range(30)]
+def flower_colour():
+    return choice([
+        'red', 'green', 'blue', 'yellow', 'orange',
+    ])
+
+    inputs = (random(), 0.5, 0.1)
+    value = tuple([int(255 * c) for c in hls_to_rgb(*inputs)])
+    return value
+
+
+LEAVES = [Particle.random(colour=choice(Colours.BROWNS)) for i in range(30)]
+FLOWERS = [Particle.random(colour=flower_colour()) for i in range(500)]
 
 
 class Season:
@@ -71,7 +90,8 @@ def draw_spring():
 
 
 def draw_summer():
-    pass
+    for flower in FLOWERS:
+        flower.draw()
 
 
 def draw_autumn():
