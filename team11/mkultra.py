@@ -65,6 +65,6 @@ def draw_branch(start=(200, 400), length=trunk_length, rotation=0, depth=0, max_
 
 
     for twig_angle in twig_angles:
-        draw_branch(start=end, length=twig_length, rotation=twig_angle, depth=depth + 1)
+        draw_branch(start=end, length=twig_length, rotation=twig_angle, depth=depth + 1, max_depth=max_depth)
 
 
