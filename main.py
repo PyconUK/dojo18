@@ -11,19 +11,33 @@ class Colours:
     WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
     AUTUMN = (204, 153, 0)
+    BROWN = (102, 78, 0)
 
 
 class Particle:
-    def __init__(self, pos, size=10):
-        self.pos = pos
+    def __init__(self, pos, size=10, colour=Colours.WHITE):
+        self.x = pos[0]
+        self.y = pos[1]
         self.size = size
+        self.colour = colour
+
+    @property
+    def pos(self):
+        return (self.x, self.y)
 
     def draw(self):
-        screen.draw.filled_circle(self.pos, self.size, Colours.WHITE)
+        screen.draw.filled_circle(self.pos, self.size, self.colour)
 
     @classmethod
-    def random(cls):
-        return cls((randint(0, WIDTH), randint(0, HEIGHT)), size=randint(5, 20))
+    def random(cls, colour=Colours.WHITE):
+        return cls(
+            (randint(0, WIDTH), randint(0, HEIGHT)),
+            size=randint(5, 20),
+            colour=colour
+        )
+
+
+LEAVES = [Particle.random(colour=Colours.BROWN) for i in range(30)]
 
 
 class Season:
@@ -61,7 +75,8 @@ def draw_summer():
 
 
 def draw_autumn():
-    pass
+    for leaf in LEAVES:
+        leaf.draw()
 
 
 def draw_winter():
@@ -78,7 +93,13 @@ def update_summer():
 
 
 def update_autumn():
-    pass
+    for leaf in LEAVES:
+        leaf.x += randint(4, 7)
+        leaf.y += 3
+        if leaf.x > WIDTH:
+            leaf.x = -leaf.size
+        elif leaf.y > HEIGHT:
+            leaf.y = -leaf.size
 
 
 def update_winter():
