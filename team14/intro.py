@@ -21,8 +21,8 @@ sprites = [
 our_music = [
   'spring_birds',
   'summer_song',
-  'sleigh_bells',
-  'autumn_school'
+  'autumn_school',
+  'sleigh_bells'
 ]
 
 season = 0
